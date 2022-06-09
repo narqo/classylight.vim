@@ -1,7 +1,7 @@
 " classylight.vim -- Vim color scheme.
 " Author:      Vladimir Varankin (vladimir@varank.in)
 " Webpage:     https://github.com/narqo/classylight.vim
-" Description: Light colour scheme, inspired by IntelliJ IDE's Classic Light
+" Description: Minimalistic light colour scheme, inspired by IntelliJ IDE's Classic Light
 " Last Change: 2022-06-09
 
 hi clear
@@ -18,14 +18,14 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Conceal ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#c0c0c0 gui=NONE
     hi Constant ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
     hi String ctermbg=NONE ctermfg=2 cterm=NONE guibg=NONE guifg=#008000 gui=NONE
-    hi Identifier ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#000080 gui=NONE
+    hi Identifier ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
     hi Statement ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#000080 gui=NONE
     hi Operator ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
     hi PreProc ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
-    hi Type ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
+    hi Type ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#000080 gui=NONE
     hi Special ctermbg=NONE ctermfg=0 cterm=NONE guibg=NONE guifg=#121212 gui=NONE
     hi Error ctermbg=NONE ctermfg=1 cterm=NONE guibg=NONE guifg=#800000 gui=NONE
-    hi Warning ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#808000 gui=NONE
+    hi Warning ctermbg=3 ctermfg=NONE cterm=NONE guibg=#808000 guifg=NONE gui=NONE
     hi ModeMsg ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#c0c0c0 gui=NONE
     hi Todo ctermbg=NONE ctermfg=3 cterm=bold guibg=NONE guifg=#808000 gui=bold
     hi Underlined ctermbg=NONE ctermfg=0 cterm=underline guibg=NONE guifg=#121212 gui=underline
@@ -54,7 +54,7 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi Directory ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#000080 gui=NONE
     hi MatchParen ctermbg=NONE ctermfg=3 cterm=bold guibg=NONE guifg=#808000 gui=bold
     hi SpellBad ctermbg=NONE ctermfg=9 cterm=underline guibg=NONE guifg=#ff0000 gui=underline
-    hi SpellCap ctermbg=NONE ctermfg=10 cterm=underline guibg=NONE guifg=#00ff00 gui=underline
+    hi SpellCap ctermbg=NONE ctermfg=11 cterm=underline guibg=NONE guifg=#ffff00 gui=underline
     hi SpellLocal ctermbg=NONE ctermfg=11 cterm=underline guibg=NONE guifg=#ffff00 gui=underline
     hi QuickFixLine ctermbg=254 ctermfg=NONE cterm=NONE guibg=#e4e4e4 guifg=NONE gui=NONE
     hi DiffAdd ctermbg=255 ctermfg=10 cterm=NONE guibg=#eeeeee guifg=#00ff00 gui=NONE
@@ -71,14 +71,14 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Conceal ctermbg=NONE ctermfg=gray cterm=NONE
     hi Constant ctermbg=NONE ctermfg=black cterm=NONE
     hi String ctermbg=NONE ctermfg=darkgreen cterm=NONE
-    hi Identifier ctermbg=NONE ctermfg=darkblue cterm=NONE
+    hi Identifier ctermbg=NONE ctermfg=black cterm=NONE
     hi Statement ctermbg=NONE ctermfg=darkblue cterm=NONE
     hi Operator ctermbg=NONE ctermfg=black cterm=NONE
     hi PreProc ctermbg=NONE ctermfg=black cterm=NONE
-    hi Type ctermbg=NONE ctermfg=black cterm=NONE
+    hi Type ctermbg=NONE ctermfg=darkblue cterm=NONE
     hi Special ctermbg=NONE ctermfg=black cterm=NONE
     hi Error ctermbg=NONE ctermfg=darkred cterm=NONE
-    hi Warning ctermbg=NONE ctermfg=darkyellow cterm=NONE
+    hi Warning ctermbg=darkyellow ctermfg=NONE cterm=NONE
     hi ModeMsg ctermbg=NONE ctermfg=gray cterm=NONE
     hi Todo ctermbg=NONE ctermfg=darkyellow cterm=bold
     hi Underlined ctermbg=NONE ctermfg=black cterm=underline
@@ -107,7 +107,7 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Directory ctermbg=NONE ctermfg=darkblue cterm=NONE
     hi MatchParen ctermbg=NONE ctermfg=darkyellow cterm=bold
     hi SpellBad ctermbg=NONE ctermfg=red cterm=underline
-    hi SpellCap ctermbg=NONE ctermfg=green cterm=underline
+    hi SpellCap ctermbg=NONE ctermfg=yellow cterm=underline
     hi SpellLocal ctermbg=NONE ctermfg=yellow cterm=underline
     hi QuickFixLine ctermbg=white ctermfg=NONE cterm=NONE
     hi DiffAdd ctermbg=white ctermfg=green cterm=NONE
@@ -156,7 +156,7 @@ hi link diffAdded DiffAdd
 hi link diffRemoved DiffDelete
 hi link htmlTag htmlTagName
 hi link htmlEndTag htmlTag
-hi link gitcommitSummary Title
+hi link gitcommitSummary Normal
 
 if (has('termguicolors') && &termguicolors) || has('gui_running')
     let g:terminal_ansi_colors = [ '#000000', '#800000', '#008000', '#808000', '#000080', '#800080', '#008080', '#c0c0c0', '#808080', '#ff0000', '#00ff00', '#ffff00', '#0000ff', '#ff00ff', '#00ffff', '#ffffff' ]

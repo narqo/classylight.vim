@@ -7,7 +7,7 @@
         author:      "Vladimir Varankin",
         email:       "vladimir@varank.in",
         name:        "classylight",
-        description: "Light colour scheme, inspired by IntelliJ IDE's Classic Light",
+        description: "Minimalistic light colour scheme, inspired by IntelliJ IDE's Classic Light",
         webpage:     "https://github.com/narqo/classylight.vim"
     }
 
@@ -88,9 +88,10 @@
         [ "Number", "Constant" ],
         [ "Float", "Number" ],
         [ "Boolean", "Constant" ],
+
         [ "String", "NONE", darkgreen, "NONE" ],
 
-        [ "Identifier", "NONE", darkblue, "NONE" ],
+        [ "Identifier", "NONE", fg, "NONE" ],
         [ "Function", "Identifier" ],
 
         [ "Statement", "NONE", darkblue, "NONE" ],
@@ -108,7 +109,7 @@
         [ "Macro", "PreProc" ],
         [ "PreCondit", "PreProc" ],
 
-        [ "Type", "NONE", fg, "NONE" ],
+        [ "Type", "NONE", darkblue, "NONE" ],
         [ "StorageClass", "Type" ],
         [ "Structure", "Type" ],
         [ "Typedef", "Type" ],
@@ -122,7 +123,7 @@
 
         [ "Error", "NONE", darkred, "NONE" ],
         [ "ErrorMsg", "Error" ],
-        [ "Warning", "NONE", darkyellow, "NONE" ],
+        [ "Warning", darkyellow, "NONE", "NONE" ],
         [ "WarningMsg", "Warning" ],
 
         [ "ModeMsg", "NONE", gray, "NONE" ],
@@ -171,7 +172,7 @@
         [ "MatchParen", "NONE", darkyellow, "bold" ],
 
         [ "SpellBad", "NONE", red, "underline" ],
-        [ "SpellCap", "NONE", green, "underline" ],
+        [ "SpellCap", "NONE", yellow, "underline" ],
         [ "SpellLocal", "NONE", yellow, "underline" ],
         [ "SpellRare", "SpellLocal" ],
 
@@ -187,7 +188,7 @@
         [ "helpHyperTextJump", "NONE", darkmagenta, "NONE" ],
         [ "htmlTag", "htmlTagName" ],
         [ "htmlEndTag", "htmlTag" ],
-        [ "gitcommitSummary", "Title" ]
+        [ "gitcommitSummary", "Normal" ]
     ]
 
     # Define the color palette used by :terminal when in GUI Vim
