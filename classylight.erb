@@ -1,0 +1,297 @@
+<%
+    # RNB, A VIM COLORSCHEME TEMPLATE
+    # Author:        Romain Lafourcade (https://github.com/romainl)
+    # Canonical URL: https://github.com/romainl/vim-rnb
+
+    information = {
+        author:      "Vladimir Varankin",
+        email:       "vladimir@varank.in",
+        name:        "classylight",
+        description: "Light colour scheme, inspired by IntelliJ IDE's Classic Light",
+        webpage:     "https://github.com/narqo/classylight.vim"
+    }
+
+    # Color palette:
+    #
+    # black = [       give each color a distinctive name
+    #   "#000000",    hexadecimal color used in GVim/MacVim or "NONE"
+    #   0,            integer between 0 and 255 used by terminals supporting 256 colors
+    #                 or "NONE"
+    #   "black"       color name used by less capable color terminals, can be "darkred",
+    #                 "red", "darkgreen", "green", "darkyellow", "yellow", "darkblue",
+    #                 "blue", "darkmagenta", "magenta", "black", "darkgray", "gray",
+    #                 "white", or "NONE"
+    # ]
+    #
+    # If your colors are defined correctly, the resulting colorscheme is guaranteed
+    # to work in GVim (Windows/Linux), MacVim (MacOS), and any properly set up terminal emulator.
+
+    # Background
+    bg   = ["#ffffff", 255, "white"]
+    bg_1 = ["#eeeeee", 255, "white"]
+    bg_2 = ["#e4e4e4", 254, "white"]
+	# Foreground
+    fg    = ["#121212", 0, "black"]
+    fgl_1 = ["#303030", 236, "black"]
+    fgl_2 = ["#4e4e4e", 239, "darkgray"]
+
+    black       = ["#000000", 0, "black"]
+    darkred     = ["#800000", 1, "darkred"]
+    darkgreen   = ["#008000", 2, "darkgreen"]
+    darkyellow  = ["#808000", 3, "darkyellow"]
+    darkblue    = ["#000080", 4, "darkblue"]
+    darkmagenta = ["#800080", 5, "darkmagenta"]
+    darkcyan    = ["#008080", 6, "darkcyan"]
+    gray        = ["#c0c0c0", 7, "gray"]
+    darkgray    = ["#808080", 8, "darkgray"]
+    red         = ["#ff0000", 9, "red"]
+    green       = ["#00ff00", 10, "green"]
+    yellow      = ["#ffff00", 11, "yellow"]
+    blue        = ["#0000ff", 12, "blue"]
+    magenta     = ["#ff00ff", 13, "magenta"]
+    cyan        = ["#00ffff", 14, "cyan"]
+    white       = ["#ffffff", 15, "white"]
+    aqua        = ["#c1ddff", 134, "aqua"]
+
+    # Highlights
+    #
+    # You can define highlight groups like this:
+    #
+    #   [ "Normal",       name of the highlight group
+    #     white,          the color used for background color, or use "NONE", "fg" or "bg"
+    #     darkgray,       the color used for foreground color, or use "NONE", "fg" or "bg"
+    #     "NONE"          style, can be "bold", "underline", "reverse", "italic",
+    #                     "standout", "NONE", "undercurl", or a comma-separated list of
+    #                     valid attributes like "underline,bold"
+    #   ]
+    #
+    # The sample above tells Vim to render normal text in dark gray against a white
+    # background, without any other styling.
+    #
+    # Or you can link an highlight group to another. Here, "Title" will inherit its style from
+    # "Normal":
+    #
+    #   [ "Title", "Normal" ]
+    #
+    # You can add any custom highlight group to the standard list below but you shouldn't
+    # remove any if you want a working colorscheme. Most of them are described under
+    # :help highlight-default, the others are taken from :help group-name. Both help sections
+    # are good reads, by the way.
+    highlights = [
+        [ "Normal", bg, fg, "NONE" ],
+        [ "NonText", "Normal" ],
+        [ "Comment", "NONE", darkgray, "NONE" ],
+        [ "Conceal", "NONE", gray, "NONE" ],
+
+        [ "Constant", "NONE", fg, "NONE" ],
+        [ "Character", "Constant" ],
+        [ "Number", "Constant" ],
+        [ "Float", "Number" ],
+        [ "Boolean", "Constant" ],
+        [ "String", "NONE", darkgreen, "NONE" ],
+
+        [ "Identifier", "NONE", darkblue, "NONE" ],
+        [ "Function", "Identifier" ],
+
+        [ "Statement", "NONE", darkblue, "NONE" ],
+        [ "Conditonal", "Statement" ],
+        [ "Repeat", "Statement" ],
+        [ "Label", "Statement" ],
+        [ "Keyword", "Statement" ],
+        [ "Exception", "Statement" ],
+
+        [ "Operator", "NONE", fg, "NONE" ],
+
+        [ "PreProc", "NONE", fg, "NONE" ],
+        [ "Include", "PreProc" ],
+        [ "Define", "PreProc" ],
+        [ "Macro", "PreProc" ],
+        [ "PreCondit", "PreProc" ],
+
+        [ "Type", "NONE", fg, "NONE" ],
+        [ "StorageClass", "Type" ],
+        [ "Structure", "Type" ],
+        [ "Typedef", "Type" ],
+
+        [ "Special", "NONE", fg, "NONE" ],
+        [ "SpecialChar", "Special" ],
+        [ "Tag", "Special" ],
+        [ "Delimiter", "Special" ],
+        [ "SpecialComment", "Special" ],
+        [ "Debug", "Special" ],
+
+        [ "Error", "NONE", darkred, "NONE" ],
+        [ "ErrorMsg", "Error" ],
+        [ "Warning", "NONE", darkyellow, "NONE" ],
+        [ "WarningMsg", "Warning" ],
+
+        [ "ModeMsg", "NONE", gray, "NONE" ],
+        [ "MoreMsg", "ModeMsg" ],
+        [ "Question", "ModeMsg" ],
+
+        [ "Ignore", "NonText" ],
+        [ "Todo", "NONE", darkyellow, "bold" ],
+        [ "Underlined", "NONE", fg, "underline" ],
+
+        [ "StatusLine", bg, darkmagenta, "bold" ],
+        [ "StatusLineNC", bg, gray, "NONE" ],
+        [ "StatusLineTerm", "StatusLine" ],
+        [ "StatusLineTermNC", "StatusLineNC" ],
+        [ "TabLine", bg, gray, "NONE"],
+        [ "TabLineFill", "TabLine" ],
+        [ "TabLineSel", bg, darkmagenta, "bold" ],
+        [ "WildMenu", darkyellow, bg, "NONE" ],
+        [ "VertSplit", gray, gray, "NONE" ],
+
+        [ "Title", "NONE", fg, "bold" ],
+
+        [ "LineNr", "NONE", gray, "NONE" ],
+        [ "CursorLineNr", bg, darkmagenta, "NONE" ],
+        [ "Cursor", darkmagenta, fg, "NONE" ],
+        [ "CursorLine", bg, "NONE", "NONE" ],
+        [ "CursorColumn", "CursorLine" ],
+        [ "ColorColumn", "CursorColumn" ],
+        [ "SignColumn", "NONE", gray, "NONE" ],
+
+        [ "Visual", aqua, "fg", "NONE" ],
+        [ "VisualNOS", "Visual" ],
+
+        [ "Pmenu", bg_1, gray, "NONE" ],
+        [ "PmenuSbar", bg_2, "NONE", "NONE" ],
+        [ "PmenuSel", bg_2, darkmagenta, "bold" ],
+        [ "PmenuThumb", darkyellow, "NONE", "NONE" ],
+
+        [ "Folded", bg_2, gray, "NONE" ],
+        [ "FoldColumn", "NONE", yellow, "NONE" ],
+
+        [ "SpecialKey", "NONE", gray, "NONE" ],
+        [ "IncSearch", yellow, fg, "NONE" ],
+        [ "Search", yellow, fg, "NONE" ],
+        [ "Directory", "NONE", darkblue, "NONE" ],
+        [ "MatchParen", "NONE", darkyellow, "bold" ],
+
+        [ "SpellBad", "NONE", red, "underline" ],
+        [ "SpellCap", "NONE", green, "underline" ],
+        [ "SpellLocal", "NONE", yellow, "underline" ],
+        [ "SpellRare", "SpellLocal" ],
+
+        [ "QuickFixLine", bg_2, "NONE", "NONE" ],
+
+        [ "DiffAdd", bg_1, green, "NONE" ],
+        [ "DiffChange", bg_1, "NONE", "NONE" ],
+        [ "DiffDelete", bg_1, red, "NONE" ],
+        [ "DiffText", bg_1, yellow, "NONE" ],
+        [ "diffAdded", "DiffAdd" ],
+        [ "diffRemoved", "DiffDelete" ],
+
+        [ "helpHyperTextJump", "NONE", darkmagenta, "NONE" ],
+        [ "htmlTag", "htmlTagName" ],
+        [ "htmlEndTag", "htmlTag" ],
+        [ "gitcommitSummary", "Title" ]
+    ]
+
+    # Define the color palette used by :terminal when in GUI Vim
+    # or in TUI Vim when 'termguicolors' is enabled. If this list
+    # is empty or if it doesn't contain exactly 16 items, the corresponding
+    # Vim variable won't be set.
+    #
+    # The expected values are colors defined in step 3.
+    #
+    # Terminal emulators use a basic palette of 16 colors that can be
+    # addressed by CLI and TUI tools via their name or their index, from
+    # 0 to 15. The list is not really standardized but it is generally
+    # assumed to look like this:
+    #
+    #   Index | Name
+    #  -------|-------------
+    #   0     | black
+    #   1     | darkred
+    #   2     | darkgreen
+    #   3     | darkyellow
+    #   4     | darkblue
+    #   5     | darkmagenta
+    #   6     | darkcyan
+    #   7     | gray
+    #   8     | darkgray
+    #   9     | red
+    #   10    | green
+    #   11    | yellow
+    #   12    | blue
+    #   13    | magenta
+    #   14    | cyan
+    #   15    | white
+    #
+    # While you are certainly free to make colors 0 to 7 shades of blue,
+    # this will inevitably cause usability issues so… be careful.
+    terminal_ansi_colors = [
+        black,
+        darkred,
+        darkgreen,
+        darkyellow,
+        darkblue,
+        darkmagenta,
+        darkcyan,
+        gray,
+        darkgray,
+        red,
+        green,
+        yellow,
+        blue,
+        magenta,
+        cyan,
+        white
+    ]
+
+    # Many thanks to Barry Arthur (https://github.com/dahu) for the original idea.
+
+    # You don't need to edit anything beyond this line.
+-%>
+" <%= information[:name] %>.vim -- Vim color scheme.
+" Author:      <%= information[:author] %> (<%= information[:email] %>)
+" Webpage:     <%= information[:webpage] %>
+" Description: <%= information[:description] %>
+" Last Change: <%= Time.new.strftime "%Y-%m-%d" %>
+
+hi clear
+
+if exists("syntax_on")
+  syntax reset
+endif
+
+let colors_name = "<%= information[:name].downcase %>"
+
+if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
+<% highlights.each do |highlight| -%>
+<% if highlight.length == 4 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][1] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][1] %> cterm=<%= highlight[3] %> guibg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][0] %> guifg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][0] %> gui=<%= highlight[3] %>
+<% elsif highlight.length > 4 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][1] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][1] %> cterm=<%= highlight[3] %> guibg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][0] %> guifg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][0] %> gui=<%= highlight[3] %> guisp=<%= highlight[4].kind_of?(String) ? highlight[4] : highlight[4][0] %>
+<% end -%>
+<% end -%>
+
+elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
+    set t_Co=16
+<%= '' %>
+<% highlights.each do |highlight| -%>
+<% if highlight.length > 2 -%>
+    hi <%= highlight[0] %> ctermbg=<%= highlight[1].kind_of?(String) ? highlight[1] : highlight[1][2] %> ctermfg=<%= highlight[2].kind_of?(String) ? highlight[2] : highlight[2][2] %> cterm=<%= highlight[3] %>
+<% end -%>
+<% end -%>
+endif
+<% links = highlights.select do |highlight| -%>
+<% highlight.length == 2 -%>
+<% end -%>
+<% if links.length > 0 -%>
+<%= '' %>
+<% links.each do |link| -%>
+hi link <%= link[0] %> <%= link[1] %>
+<% end -%>
+<% end -%>
+<% if terminal_ansi_colors.length == 16 -%>
+<%= '' %>
+if (has('termguicolors') && &termguicolors) || has('gui_running')
+    let g:terminal_ansi_colors = [ <%= terminal_ansi_colors.map { |color| "'#{color[0]}'" }.join(', ') %> ]
+endif
+<% end -%>
+
+" Generated with RNB (https://github.com/romainl/vim-rnb)
