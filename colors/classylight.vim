@@ -2,7 +2,7 @@
 " Author:      Vladimir Varankin (vladimir@varank.in)
 " Webpage:     https://github.com/narqo/classylight.vim
 " Description: Minimalistic light colour scheme, inspired by IntelliJ IDE's Classic Light
-" Last Change: 2022-06-09
+" Last Change: 2022-06-10
 
 hi clear
 
@@ -42,25 +42,25 @@ if ($TERM =~ '256' || &t_Co >= 256) || has("gui_running")
     hi CursorLine ctermbg=255 ctermfg=NONE cterm=NONE guibg=#ffffff guifg=NONE gui=NONE
     hi SignColumn ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#c0c0c0 gui=NONE
     hi Visual ctermbg=134 ctermfg=fg cterm=NONE guibg=#c1ddff guifg=fg gui=NONE
-    hi Pmenu ctermbg=255 ctermfg=7 cterm=NONE guibg=#eeeeee guifg=#c0c0c0 gui=NONE
+    hi Pmenu ctermbg=255 ctermfg=8 cterm=NONE guibg=#eeeeee guifg=#808080 gui=NONE
     hi PmenuSbar ctermbg=254 ctermfg=NONE cterm=NONE guibg=#e4e4e4 guifg=NONE gui=NONE
     hi PmenuSel ctermbg=254 ctermfg=5 cterm=bold guibg=#e4e4e4 guifg=#800080 gui=bold
     hi PmenuThumb ctermbg=3 ctermfg=NONE cterm=NONE guibg=#808000 guifg=NONE gui=NONE
-    hi Folded ctermbg=254 ctermfg=7 cterm=NONE guibg=#e4e4e4 guifg=#c0c0c0 gui=NONE
-    hi FoldColumn ctermbg=NONE ctermfg=11 cterm=NONE guibg=NONE guifg=#ffff00 gui=NONE
+    hi Folded ctermbg=254 ctermfg=8 cterm=NONE guibg=#e4e4e4 guifg=#808080 gui=NONE
+    hi FoldColumn ctermbg=NONE ctermfg=3 cterm=NONE guibg=NONE guifg=#808000 gui=NONE
     hi SpecialKey ctermbg=NONE ctermfg=7 cterm=NONE guibg=NONE guifg=#c0c0c0 gui=NONE
     hi IncSearch ctermbg=11 ctermfg=0 cterm=NONE guibg=#ffff00 guifg=#121212 gui=NONE
     hi Search ctermbg=11 ctermfg=0 cterm=NONE guibg=#ffff00 guifg=#121212 gui=NONE
     hi Directory ctermbg=NONE ctermfg=4 cterm=NONE guibg=NONE guifg=#000080 gui=NONE
     hi MatchParen ctermbg=NONE ctermfg=3 cterm=bold guibg=NONE guifg=#808000 gui=bold
-    hi SpellBad ctermbg=NONE ctermfg=9 cterm=underline guibg=NONE guifg=#ff0000 gui=underline
-    hi SpellCap ctermbg=NONE ctermfg=11 cterm=underline guibg=NONE guifg=#ffff00 gui=underline
-    hi SpellLocal ctermbg=NONE ctermfg=11 cterm=underline guibg=NONE guifg=#ffff00 gui=underline
+    hi SpellBad ctermbg=NONE ctermfg=1 cterm=underline guibg=NONE guifg=#800000 gui=underline
+    hi SpellCap ctermbg=3 ctermfg=0 cterm=NONE guibg=#808000 guifg=#121212 gui=NONE
+    hi SpellLocal ctermbg=3 ctermfg=0 cterm=NONE guibg=#808000 guifg=#121212 gui=NONE
     hi QuickFixLine ctermbg=254 ctermfg=NONE cterm=NONE guibg=#e4e4e4 guifg=NONE gui=NONE
-    hi DiffAdd ctermbg=255 ctermfg=10 cterm=NONE guibg=#eeeeee guifg=#00ff00 gui=NONE
+    hi DiffAdd ctermbg=255 ctermfg=2 cterm=NONE guibg=#eeeeee guifg=#008000 gui=NONE
     hi DiffChange ctermbg=255 ctermfg=NONE cterm=NONE guibg=#eeeeee guifg=NONE gui=NONE
-    hi DiffDelete ctermbg=255 ctermfg=9 cterm=NONE guibg=#eeeeee guifg=#ff0000 gui=NONE
-    hi DiffText ctermbg=255 ctermfg=11 cterm=NONE guibg=#eeeeee guifg=#ffff00 gui=NONE
+    hi DiffDelete ctermbg=255 ctermfg=1 cterm=NONE guibg=#eeeeee guifg=#800000 gui=NONE
+    hi DiffText ctermbg=255 ctermfg=3 cterm=NONE guibg=#eeeeee guifg=#808000 gui=NONE
     hi helpHyperTextJump ctermbg=NONE ctermfg=5 cterm=NONE guibg=NONE guifg=#800080 gui=NONE
 
 elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
@@ -94,26 +94,26 @@ elseif &t_Co == 8 || $TERM !~# '^linux' || &t_Co == 16
     hi Cursor ctermbg=darkmagenta ctermfg=black cterm=NONE
     hi CursorLine ctermbg=white ctermfg=NONE cterm=NONE
     hi SignColumn ctermbg=NONE ctermfg=gray cterm=NONE
-    hi Visual ctermbg=aqua ctermfg=fg cterm=NONE
-    hi Pmenu ctermbg=white ctermfg=gray cterm=NONE
+    hi Visual ctermbg=blue ctermfg=fg cterm=NONE
+    hi Pmenu ctermbg=white ctermfg=darkgray cterm=NONE
     hi PmenuSbar ctermbg=white ctermfg=NONE cterm=NONE
     hi PmenuSel ctermbg=white ctermfg=darkmagenta cterm=bold
     hi PmenuThumb ctermbg=darkyellow ctermfg=NONE cterm=NONE
-    hi Folded ctermbg=white ctermfg=gray cterm=NONE
-    hi FoldColumn ctermbg=NONE ctermfg=yellow cterm=NONE
+    hi Folded ctermbg=white ctermfg=darkgray cterm=NONE
+    hi FoldColumn ctermbg=NONE ctermfg=darkyellow cterm=NONE
     hi SpecialKey ctermbg=NONE ctermfg=gray cterm=NONE
     hi IncSearch ctermbg=yellow ctermfg=black cterm=NONE
     hi Search ctermbg=yellow ctermfg=black cterm=NONE
     hi Directory ctermbg=NONE ctermfg=darkblue cterm=NONE
     hi MatchParen ctermbg=NONE ctermfg=darkyellow cterm=bold
-    hi SpellBad ctermbg=NONE ctermfg=red cterm=underline
-    hi SpellCap ctermbg=NONE ctermfg=yellow cterm=underline
-    hi SpellLocal ctermbg=NONE ctermfg=yellow cterm=underline
+    hi SpellBad ctermbg=NONE ctermfg=darkred cterm=underline
+    hi SpellCap ctermbg=darkyellow ctermfg=black cterm=NONE
+    hi SpellLocal ctermbg=darkyellow ctermfg=black cterm=NONE
     hi QuickFixLine ctermbg=white ctermfg=NONE cterm=NONE
-    hi DiffAdd ctermbg=white ctermfg=green cterm=NONE
+    hi DiffAdd ctermbg=white ctermfg=darkgreen cterm=NONE
     hi DiffChange ctermbg=white ctermfg=NONE cterm=NONE
-    hi DiffDelete ctermbg=white ctermfg=red cterm=NONE
-    hi DiffText ctermbg=white ctermfg=yellow cterm=NONE
+    hi DiffDelete ctermbg=white ctermfg=darkred cterm=NONE
+    hi DiffText ctermbg=white ctermfg=darkyellow cterm=NONE
     hi helpHyperTextJump ctermbg=NONE ctermfg=darkmagenta cterm=NONE
 endif
 
